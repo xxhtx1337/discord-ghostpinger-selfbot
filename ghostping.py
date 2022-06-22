@@ -14,7 +14,7 @@ async def on_message(message):
   if message.author == client.user: # Skips if it's the account message
     return
 
-  if len(message.content) > 1: # Proceeds to ghostping anyone sending a message
+  if len(message.content) > 0: # Proceeds to ghostping anyone sending a message
     sleep(randint(1,5)) # Random delay in seconds from 1 to 5 secs
     await message.channel.send("<@"+str(message.author.id)+">", delete_after=0) # Ghostpings the user
     print("-------------------------------------------------------")
